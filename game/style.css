@@ -166,6 +166,7 @@ body{
 .end-card{text-align:center; max-width:560px; padding:40px 48px; border-radius:22px;
   background:linear-gradient(180deg,#141c3dee,#0e1430f2); border:1px solid #ffd76a55; box-shadow:0 24px 70px #000a, 0 0 90px #ffb52e22;}
 .end-sigil{font-size:64px; color:var(--gold); text-shadow:0 0 30px #ffb52e88;}
+.end-sigil svg{display:block; margin:0 auto; filter:drop-shadow(0 0 18px #ffb52e88);}
 #screen-end.lose .end-sigil{color:#ff6b6b; text-shadow:0 0 30px #ff4d6d66;}
 #screen-end.lose .end-card{border-color:#ff6b6b55;}
 .end-card h1{font-size:56px; letter-spacing:.14em; margin:6px 0;}

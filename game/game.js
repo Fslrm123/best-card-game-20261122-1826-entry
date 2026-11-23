@@ -434,10 +434,31 @@ function checkEnd(){
   if(S.enemy.life <= 0) endGame(true);
   else if(S.player.life <= 0) endGame(false);
 }
+const CROWN_SVG = `<svg viewBox="0 0 120 92" width="112" height="86" role="img" aria-label="Golden crown">
+  <defs>
+    <linearGradient id="crownGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe98a"/>
+      <stop offset=".55" stop-color="#ffd76a"/>
+      <stop offset="1" stop-color="#e8a51c"/>
+    </linearGradient>
+  </defs>
+  <path d="M12 74 L8 28 L36 50 L60 16 L84 50 L112 28 L108 74 Z" fill="url(#crownGold)" stroke="#b97e0e" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="8" cy="23" r="6" fill="#ffd76a" stroke="#b97e0e" stroke-width="2"/>
+  <circle cx="60" cy="11" r="7" fill="#ffd76a" stroke="#b97e0e" stroke-width="2"/>
+  <circle cx="112" cy="23" r="6" fill="#ffd76a" stroke="#b97e0e" stroke-width="2"/>
+  <rect x="12" y="74" width="96" height="12" rx="3" fill="#e8a51c" stroke="#b97e0e" stroke-width="2.5"/>
+  <circle cx="60" cy="60" r="7" fill="#ff4d6d" stroke="#a1122e" stroke-width="1.5"/>
+  <circle cx="33" cy="62" r="5" fill="#37c8e8" stroke="#0f6f8a" stroke-width="1.5"/>
+  <circle cx="87" cy="62" r="5" fill="#37c8e8" stroke="#0f6f8a" stroke-width="1.5"/>
+  <circle cx="36" cy="80" r="3" fill="#7ee0ff"/>
+  <circle cx="60" cy="80" r="3" fill="#ff4d6d"/>
+  <circle cx="84" cy="80" r="3" fill="#7ee0ff"/>
+</svg>`;
 function endGame(won){
   S.phase = "over";
   els["screen-end"].classList.toggle("lose", !won);
-  els["end-sigil"].textContent = won ? "✦" : "☠";
+  if(won) els["end-sigil"].innerHTML = CROWN_SVG;
+  else els["end-sigil"].textContent = "☠";
   els["end-title"].textContent = won ? "VICTORY" : "DEFEAT";
   els["end-text"].textContent = won
     ? "The Voidwarden falls. Dawn returns to the lanes."
