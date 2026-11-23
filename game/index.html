@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aetherfall Duels</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <!-- ===== TITLE SCREEN ===== -->
+  <section id="screen-title" class="screen">
+    <div class="title-runes" aria-hidden="true"></div>
+    <div class="title-card">
+      <div class="title-sigil" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><polygon points="50,4 90,28 90,72 50,96 10,72 10,28" fill="none" stroke="#ffd76a" stroke-width="3"/><polygon points="50,20 76,35 76,65 50,80 24,65 24,35" fill="none" stroke="#7ee0ff" stroke-width="2"/><circle cx="50" cy="50" r="9" fill="#ffd76a"/></svg>
+      </div>
+      <h1 class="game-title">AETHERFALL<br><span>DUELS</span></h1>
+      <p class="tagline">Three lanes. Twenty life. One Voidwarden between you and the dawn.</p>
+      <div class="title-buttons">
+        <button id="btn-play" class="btn btn-gold">⚔ Enter the Duel</button>
+        <button id="btn-how" class="btn btn-ghost">How to Play</button>
+      </div>
+      <div id="howto" class="howto hidden">
+        <h2>How to Play</h2>
+        <ul>
+          <li><b>Goal:</b> reduce the Voidwarden's <b>Life</b> from 20 to 0 before he does the same to you.</li>
+          <li><b>Aether:</b> you gain +1 max Aether each turn (up to 10) and it refills every turn. Cards cost Aether, shown in the blue gem.</li>
+          <li><b>Play:</b> click a card in your hand, then click an empty lane on your side to summon it. Spells: click the card, then click a target.</li>
+          <li><b>Attack:</b> creatures wake up the turn after they are summoned. Click a ready creature — it strikes the creature opposite it, or the enemy hero if that lane is empty.</li>
+          <li><b>Keys:</b> 1–5 select a card in hand, Enter ends your turn.</li>
+        </ul>
+        <button id="btn-how-close" class="btn btn-ghost">Close</button>
+      </div>
+      <p class="title-foot">An original card duel · no downloads, no accounts — just you, your deck, and the dark.</p>
+    </div>
+  </section>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <section id="screen-game" class="screen hidden">
+    <header class="topbar">
+      <div class="brand">AETHERFALL <span>DUELS</span></div>
+      <div class="turn-pill" id="turn-pill">Turn 1 · Your move</div>
+      <div class="top-actions">
+        <button id="btn-sound" class="btn btn-mini" title="Toggle sound">🔊</button>
+        <button id="btn-restart" class="btn btn-mini">↻ Restart</button>
+      </div>
+    </header>
+
+    <div class="table">
+      <!-- opponent -->
+      <div class="hero-row enemy">
+        <div class="hero enemy-hero" id="enemy-hero">
+          <div class="hero-face">☠</div>
+          <div class="hero-meta">
+            <div class="hero-name">Voidwarden Malachai</div>
+            <div class="hero-sub">Keeper of the Ninth Dark</div>
+          </div>
+          <div class="life-orb enemy-life"><span id="enemy-life">20</span><small>LIFE</small></div>
+          <div class="deck-count" title="Cards left in deck">🂠 <span id="enemy-deck">16</span></div>
+        </div>
+        <div class="hand enemy-hand" id="enemy-hand"></div>
+      </div>
+
+      <div class="board enemy-board" id="enemy-board"></div>
+      <div class="midline"><span id="banner"></span></div>
+      <div class="board player-board" id="player-board"></div>
+
+      <!-- player -->
+      <div class="hero-row player">
+        <div class="hero player-hero" id="player-hero">
+          <div class="hero-face">✦</div>
+          <div class="hero-meta">
+            <div class="hero-name">You — the Aetherbound</div>
+            <div class="aether" id="aether"></div>
+          </div>
+          <div class="life-orb player-life"><span id="player-life">20</span><small>LIFE</small></div>
+          <div class="deck-count" title="Cards left in deck">🂠 <span id="player-deck">16</span></div>
+        </div>
+        <button id="btn-end" class="btn btn-gold btn-end">End Turn ⏎</button>
+      </div>
+      <div class="hand player-hand" id="player-hand"></div>
+    </div>
+
+    <aside class="log" id="log"></aside>
+    <div id="toast" class="toast hidden"></div>
+  </section>
+
+  <!-- ===== END SCREEN ===== -->
+  <section id="screen-end" class="screen hidden">
+    <div class="end-card">
+      <div class="end-sigil" id="end-sigil">✦</div>
+      <h1 id="end-title">VICTORY</h1>
+      <p id="end-text">The Voidwarden falls. Dawn returns to the lanes.</p>
+      <div class="end-stats" id="end-stats"></div>
+      <button id="btn-again" class="btn btn-gold">↻ Duel Again</button>
+    </div>
+  </section>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
