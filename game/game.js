@@ -36,20 +36,20 @@ const G = {
 
 // ---------- card pool (original) ----------
 const POOL = [
-  {id:"sprite",  name:"Ember Sprite",   kind:"creature", cost:1, atk:2, hp:1, rarity:"common",    glyph:"flame",  text:"A spark with a grudge."},
-  {id:"golem",   name:"Stone Golem",    kind:"creature", cost:2, atk:1, hp:4, rarity:"common",    glyph:"rock",   text:"Slow. Immovable. Polite."},
-  {id:"dryad",   name:"Thorn Dryad",    kind:"creature", cost:2, atk:2, hp:3, rarity:"common",    glyph:"leaf",   text:"The forest fights back."},
-  {id:"hawk",    name:"Storm Hawk",     kind:"creature", cost:3, atk:3, hp:2, rarity:"rare",      glyph:"bolt",   text:"It arrives with the thunder."},
-  {id:"serpent", name:"Tide Serpent",   kind:"creature", cost:4, atk:4, hp:4, rarity:"rare",      glyph:"wave",   text:"The deep keeps its promises."},
-  {id:"stalker", name:"Night Stalker",  kind:"creature", cost:4, atk:5, hp:3, rarity:"rare",      glyph:"moon",   text:"You will hear it once."},
-  {id:"knight",  name:"Rune Knight",    kind:"creature", cost:5, atk:4, hp:6, rarity:"epic",      glyph:"shield", text:"Sworn to the falling light."},
-  {id:"wyrm",    name:"Frost Wyrm",     kind:"creature", cost:6, atk:6, hp:5, rarity:"epic",      glyph:"snow",   text:"Winter, given wings."},
-  {id:"phoenix", name:"Solar Phoenix",  kind:"creature", cost:7, atk:7, hp:6, rarity:"legendary", glyph:"sun",    text:"Dawn refuses to die."},
-  {id:"colossus",name:"Void Colossus",  kind:"creature", cost:8, atk:9, hp:8, rarity:"legendary", glyph:"void",   text:"The dark, standing up."},
-  {id:"bolt",    name:"Arc Bolt",       kind:"spell",    cost:2, rarity:"common", glyph:"bolt",   text:"Deal 3 damage to a creature or a hero.", fx:"bolt"},
-  {id:"mend",    name:"Mend",           kind:"spell",    cost:2, rarity:"common", glyph:"heal",   text:"Restore 5 Life to your hero.", fx:"mend"},
-  {id:"surge",   name:"Surge",          kind:"spell",    cost:1, rarity:"rare",   glyph:"surge",  text:"Give a friendly creature +2/+2.", fx:"surge"},
-  {id:"meteor",  name:"Meteor",         kind:"spell",    cost:5, rarity:"epic",   glyph:"meteor", text:"Deal 4 damage to ALL enemy creatures.", fx:"meteor"},
+  {id:"sprite",  name:"Ember Sprite",   kind:"creature", cost:1, atk:2, hp:1, rarity:"common",    glyph:"flame",  type:"Creature — Ember",    ability:"Strikes opposite for <b>2</b>, or the hero if empty. Wakes next turn.", text:"A spark with a grudge."},
+  {id:"golem",   name:"Stone Golem",    kind:"creature", cost:2, atk:1, hp:4, rarity:"common",    glyph:"rock",   type:"Creature — Golem",    ability:"Strikes opposite for <b>1</b>, or the hero if empty. Wakes next turn.", text:"Slow. Immovable. Polite."},
+  {id:"dryad",   name:"Thorn Dryad",    kind:"creature", cost:2, atk:2, hp:3, rarity:"common",    glyph:"leaf",   type:"Creature — Dryad",    ability:"Strikes opposite for <b>2</b>, or the hero if empty. Wakes next turn.", text:"The forest fights back."},
+  {id:"hawk",    name:"Storm Hawk",     kind:"creature", cost:3, atk:3, hp:2, rarity:"rare",      glyph:"bolt",   type:"Creature — Hawk",     ability:"Strikes opposite for <b>3</b>, or the hero if empty. Wakes next turn.", text:"It arrives with the thunder."},
+  {id:"serpent", name:"Tide Serpent",   kind:"creature", cost:4, atk:4, hp:4, rarity:"rare",      glyph:"wave",   type:"Creature — Serpent",  ability:"Strikes opposite for <b>4</b>, or the hero if empty. Wakes next turn.", text:"The deep keeps its promises."},
+  {id:"stalker", name:"Night Stalker",  kind:"creature", cost:4, atk:5, hp:3, rarity:"rare",      glyph:"moon",   type:"Creature — Stalker",  ability:"Strikes opposite for <b>5</b>, or the hero if empty. Wakes next turn.", text:"You will hear it once."},
+  {id:"knight",  name:"Rune Knight",    kind:"creature", cost:5, atk:4, hp:6, rarity:"epic",      glyph:"shield", type:"Creature — Knight",   ability:"Strikes opposite for <b>4</b>, or the hero if empty. Wakes next turn.", text:"Sworn to the falling light."},
+  {id:"wyrm",    name:"Frost Wyrm",     kind:"creature", cost:6, atk:6, hp:5, rarity:"epic",      glyph:"snow",   type:"Creature — Wyrm",     ability:"Strikes opposite for <b>6</b>, or the hero if empty. Wakes next turn.", text:"Winter, given wings."},
+  {id:"phoenix", name:"Solar Phoenix",  kind:"creature", cost:7, atk:7, hp:6, rarity:"legendary", glyph:"sun",    type:"Creature — Phoenix",  ability:"Strikes opposite for <b>7</b>, or the hero if empty. Wakes next turn.", text:"Dawn refuses to die."},
+  {id:"colossus",name:"Void Colossus",  kind:"creature", cost:8, atk:9, hp:8, rarity:"legendary", glyph:"void",   type:"Creature — Colossus", ability:"Strikes opposite for <b>9</b>, or the hero if empty. Wakes next turn.", text:"The dark, standing up."},
+  {id:"bolt",    name:"Arc Bolt",       kind:"spell",    cost:2, rarity:"common", glyph:"bolt",   type:"Spell — Lightning",   ability:"Deal <b>3</b> damage to any creature or hero.", text:"The sky keeps a ledger.", fx:"bolt"},
+  {id:"mend",    name:"Mend",           kind:"spell",    cost:2, rarity:"common", glyph:"heal",   type:"Spell — Restoration", ability:"Restore <b>5</b> Life to your hero (max 20).", text:"Light, applied gently.", fx:"mend"},
+  {id:"surge",   name:"Surge",          kind:"spell",    cost:1, rarity:"rare",   glyph:"surge",  type:"Spell — Blessing",    ability:"Give a friendly creature <b>+2/+2</b>.", text:"Strength arrives all at once.", fx:"surge"},
+  {id:"meteor",  name:"Meteor",         kind:"spell",    cost:5, rarity:"epic",   glyph:"meteor", type:"Spell — Cataclysm",   ability:"Deal <b>4</b> damage to ALL enemy creatures.", text:"The heavens object.", fx:"meteor"},
 ];
 const byId = Object.fromEntries(POOL.map(c => [c.id, c]));
 function buildDeck(){
@@ -125,15 +125,18 @@ function floatText(anchorEl, text, cls=""){
 }
 
 // ---------- rendering ----------
+const plain = (html) => html.replace(/<[^>]+>/g, "");
 function cardHTML(c, opts={}){
   const hpNow = c.curHp ?? c.hp;
   const stats = c.kind === "creature"
-    ? `<div class="atk">${c.atk}</div><div class="hp${hpNow < c.hp ? " hurt" : ""}">${hpNow}</div>` : "";
+    ? `<div class="stat-row"><div class="stat atk"><b>${c.atk}</b><small>ATK</small></div><div class="stat hp${hpNow < c.hp ? " hurt" : ""}"><b>${hpNow}</b><small>HP</small></div></div>` : `<div class="stat-row"></div>`;
   const zzz = opts.sick ? `<div class="zzz">💤</div>` : "";
   return `<div class="art">${G[c.glyph] || ""}</div>
     <div class="cname">${c.name}</div>
-    <div class="ctext">${c.text}</div>
-    <div class="cost"><b>${c.cost}</b></div>
+    <div class="ctype">${c.type}</div>
+    <div class="cability">${c.ability}</div>
+    <div class="cflavor">“${c.text}”</div>
+    <div class="cost"><b>${c.cost}</b></div><div class="cost-tag">AETHER</div>
     <div class="rarity">${c.rarity.toUpperCase()}</div>${stats}${zzz}`;
 }
 function render(){
@@ -162,7 +165,7 @@ function render(){
     d.className = `card ${c.kind} r-${c.rarity}` + (S.selected === i ? " selected" : "")
       + (c.cost > S.player.aether ? " unaffordable" : "");
     d.innerHTML = cardHTML(c);
-    d.title = `${c.name} — ${c.text}`;
+    d.title = `${c.name} (${c.type}, ${c.rarity}) — ${plain(c.ability)} “${c.text}”`;
     d.addEventListener("click", () => onHandCard(i));
     els["player-hand"].appendChild(d);
   });
@@ -185,7 +188,7 @@ function renderBoard(side, container){
       cd.className = `card creature r-${c.rarity}` + (ready ? " ready" : "") + (c.sick ? " sick" : "")
         + (targetable ? " targetable" : "");
       cd.innerHTML = cardHTML(c, {sick: c.sick});
-      cd.title = `${c.name} — ${c.atk} ATK / ${c.curHp} HP`;
+      cd.title = `${c.name} (${c.type}) — ${c.atk} ATK / ${c.curHp} HP. ${plain(c.ability)}`;
       if(side === "player") cd.addEventListener("click", () => onOwnCreature(lane));
       else cd.addEventListener("click", () => onEnemyCreature(lane));
       d.appendChild(cd);
